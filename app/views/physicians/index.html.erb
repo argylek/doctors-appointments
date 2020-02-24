@@ -1,2 +1,11 @@
 <h1>Physicians#index</h1>
-<p>Find me in app/views/physicians/index.html.erb</p>
+
+<%= link_to "New Physician", new_physician_path%>
+
+<h2><%= @physicians.length <= 0 ? "No Physicians Available" : "" %></h2>
+
+<ul>
+  <% @physicians.each do |doc| %>
+  <li><%= link_to "Dr. #{doc.full_name}", doc %></li>
+  <% end %>
+  </ul>

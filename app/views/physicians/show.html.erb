@@ -1,2 +1,10 @@
-<h1>Physicians#show</h1>
-<p>Find me in app/views/physicians/show.html.erb</p>
+<h1><%= "Dr. #{@physician.full_name}" %></h1>
+<%= link_to "Edit", edit_physician_path %>
+
+<h2>Patients</h2>
+<%= "Placeholder for Patient list" %>
+<%= link_to "Delete"%>
+
+<h2>Appointments</h2>
+<%= "placeholder for appointment list"%>
+<%= link_to "Delete"%>
