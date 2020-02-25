@@ -2,6 +2,7 @@
 
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[show edit update destroy]
+  # before_action :set_appointments, only: [:show]
   def index
     @patients = Patient.all
   end
@@ -43,6 +44,10 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name)
+    params.require(:patient).permit(:first_name, :last_name, :id)
   end
+
+  # def set_appointments
+  #   @appointment = Appointment.all - @patients.appointments
+  # end
 end

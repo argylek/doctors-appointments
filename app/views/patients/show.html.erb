@@ -3,8 +3,12 @@
 <%= link_to "delete", patient_path(@patient), method: :delete%>
 <%= link_to "back", patients_path%>
 
-<h2>Doctors</h2>
+<%# <h2>Doctors</h2>
 <%= "Placeholder for Doctor list" %>
-<%= link_to "Delete"%>
-
-
+<%# <%= link_to "Delete"%>
+<%# <p><% @appointments.each do |appointment| %> 
+<%# <li><%= link_to appointment.patient.full_name,  edit_physician_appointment_path(@physician, appointment)%>
+<%# <li><%= appointment.date %>
+<%# <li><%= appointment.time %>
+<%# <%= link_to 'delete', physician_appointment_path(@physician, appointment.id), method: :delete%>
+<%# <% end %>

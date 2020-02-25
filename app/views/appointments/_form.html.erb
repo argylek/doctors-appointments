@@ -1,0 +1,12 @@
+<h4><%= link_to "back", physician_path(@physician.id) %>
+
+<%= form_with(model: [@physician, @appointment], local: true, class:"ui form") do |f| %>
+<%= f.label :date %>
+<%= f.date_field :date, min: Date.tomorrow, required: true%>
+<%= f.label :time%>
+<%= f.time_select :time,{ampm: true, ignore_date: true, start_hour: 9, end_hour: 17}, required: true %>
+<%= f.label :patient %>
+<%= f.select :patient_id, Patient.all.collect { |u| [u.full_name, u.id]} %>
+<%# this isn't working with the 'p' variable - but is with the 'u' variable %>
+<%= f.submit nil, class: "ui purple button inverted" %>
+<% end %>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -18,6 +20,7 @@
     )
     Appointment.create(
       date: Faker::Date.in_date_period,
+      time: Faker::Time.between(from: 9, to: 16),
       physician_id: physician.id,
       patient_id: patient.id
     )

@@ -6,8 +6,9 @@
 <h2>Appointments</h2>
 <%= link_to "New Appointment", new_physician_appointment_path(@physician), class:'ui button' %>
 <% @physician.appointments.each do |appointment| %>
-<li><%= appointment.patient.full_name %></li>
-<%= appointment.date %>
+<li><%= link_to appointment.patient.full_name,  edit_physician_appointment_path(@physician, appointment)%></li>
+<li><%= appointment.date %></li>
+<li><%= appointment.time %></li>
 <%= link_to 'delete', physician_appointment_path(@physician, appointment.id), method: :delete%>
 <%# I have no idea why this is taking the second and third arguments but not the first %>
 <% end %>

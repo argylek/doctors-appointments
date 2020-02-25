@@ -3,7 +3,7 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[edit update]
   before_action :set_physician
-  before_action :set_patient, only: %i[new create update]
+  before_action :set_patient, only: %i[new edit create update]
   def index
     @appointments = @physician.appointments.all
   end
