@@ -3,10 +3,11 @@
 <%= link_to "delete", physician_path(@physician), method: :delete%>
 <%= link_to "back", physicians_path%>
 
-<h2>Patients</h2>
-<%= "Placeholder for Patient list" %>
-<%= link_to "Delete"%>
-
 <h2>Appointments</h2>
-<%= "placeholder for appointment list"%>
-<%= link_to "Delete"%>
+<%= link_to "New Appointment", new_physician_appointment_path(@physician), class:'ui button' %>
+<% @physician.appointments.each do |appointment| %>
+<li><%= appointment.patient.full_name %></li>
+<%= appointment.date %>
+<%= link_to 'delete', physician_appointment_path(@physician, appointment.id), method: :delete%>
+<%# I have no idea why this is taking the second and third arguments but not the first %>
+<% end %>
